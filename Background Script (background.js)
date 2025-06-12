@@ -1,0 +1,10 @@
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status === "complete") {
+        const startTime = Date.now();
+        chrome.storage.local.get(["trackingData"], (data) => {
+            let trackingData = data.trackingData || {};
+            trackingData[tab.url] = (trackingData[tab.url] || 0) + (Date.now() - startTime);
+            chrome.storage.local.set({ trackingData });
+        });
+    }
+});
