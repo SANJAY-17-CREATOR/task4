@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Time Tracker</title>
+    <script src="popup.js"></script>
+</head>
+<body>
+    <h2>Time Tracking Data</h2>
+    <div id="data"></div>
+</body>
+</html>
